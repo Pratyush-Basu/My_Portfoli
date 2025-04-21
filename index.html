@@ -10,20 +10,19 @@
 <body>
     <div id="header">
         <div class="container">
-            <!-- In the <nav> section -->
-<nav>
-    <img src="Images/logo.png" class="logo">
-    <ul id="sidemenu">
-        <li><a href="#header">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#project">Projects</a></li>
-        <li><a href="resume.pdf" download class="download-btn">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="menu-toggle" onclick="toggleMenu()">
-        <div class="hamburger"></div>
-    </div>
-</nav>
+            <nav>
+                <img src="Images/logo_remove.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#project" class="nav-link">Projects</a></li>
+                    <li><a href="resume.pdf" download class="download-btn">Portfolio</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <div class="hamburger"></div>
+                </div>
+            </nav>
             <div class="header-text"> 
                 <p class="typing-text"></p>
                 <h1>Hi, I'm <span>Pratyush Basu</span><br>From West Bengal, India</h1>
@@ -87,7 +86,7 @@
                     <div class="layer">
                         <h3>Parking Management System(Group)</h3>
                         <p>IoT and Computer Vision-Enhanced Smart and Effective Real-Time Management for Street and Private Parking.</p>
-                        <a href="https://github.com/Pratyush-Basu"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://github.com/Pratyush-Basu" class="project-link"><i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
                 <div class="work">
@@ -95,7 +94,7 @@
                     <div class="layer">
                         <h3>Intera AI</h3>
                         <p>Intera AI is a smart career platform with AI mock interviews, salary negotiation, resume-based coding tasks, and a voice-assisted career guidance bot.Crack Interviews. Win Salaries. Build Your Future</p>
-                        <a href="https://github.com/Pratyush-Basu"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://github.com/Pratyush-Basu" class="project-link"><i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
                 <div class="work">
@@ -103,7 +102,7 @@
                     <div class="layer">
                         <h3>Mental Health Prediction for Working Professionals</h3>
                         <p>A machine learning-based system that predicts mental health issues in professionals by analyzing work stress, emotional well-being and many more, helping to improve workplace wellness.</p>
-                        <a href="https://github.com/Pratyush-Basu/Mental-Health-Prediction-for-Working-Professional"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://github.com/Pratyush-Basu/Mental-Health-Prediction-for-Working-Professional" class="project-link"><i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
             </div>
@@ -113,17 +112,19 @@
     <section id="contact">
         <div class="contact-container">
             <h2>Contact Me</h2>
-            <p>I'd love to hear from you! Feel free to reach out using the form below or the provided details.</p>
+            <p>Let's create something amazing together! Reach out and let's start a conversation.</p>
             <div class="contact-content">
                 <div class="contact-details">
                     <h3>Get in Touch</h3>
-                    <p><i class="fas fa-paper-plane"></i> basupratyush76@gmail.com</p>
-                    <!--<p><i class="fas fa-phone"></i> +91 XXXXXXXXXX</p>-->
+                    <p><i class="fas fa-envelope"></i> basupratyush76@gmail.com</p>
+                    <!--<p><i class="fab fa-whatsapp"></i> +91 XXXXXXXXXX</p> -->
+                    <p><i class="fab fa-telegram"></i> @pratyushBasu</p>
                     <p><i class="fas fa-map-marker-alt"></i> 255 K.C. Bose Road, Kolkata-700146</p>
                     <div class="social-icons">
                         <a href="https://www.linkedin.com/in/pratyush-basu-p19/" target="_blank"><i class="fab fa-linkedin"></i></a>
                         <a href="https://github.com/Pratyush-Basu" target="_blank"><i class="fab fa-github"></i></a>
                         <a href="https://mail.google.com/mail/?view=cm&fs=1&to=basupratyush76@gmail.com"><i class="fas fa-envelope"></i></a>
+                        <a href="https://wa.me/+918100752679"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 <form class="contact-form" id="contactForm">
@@ -141,6 +142,13 @@
             </div>
         </div>
     </section>
+    
+    <footer>
+        <div class="footer-content">
+            <p>Made with <i class="fas fa-heart pulse"></i> by Pratyush Basu</p>
+            <p>&copy; 2025 All Rights Reserved</p>
+        </div>
+    </footer>
     
     <script>
         var tablinks = document.getElementsByClassName("tab-links");
@@ -190,17 +198,41 @@
         // Start the typing effect
         type();
 
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        // Enhanced smooth scrolling for navigation links with animation
+        document.querySelectorAll('.nav-link').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                // Add ripple effect animation
+                const ripple = document.createElement('span');
+                ripple.classList.add('ripple-effect');
+                this.appendChild(ripple);
+                
+                // Remove ripple after animation completes
+                setTimeout(() => {
+                    ripple.remove();
+                }, 1000);
+                
+                // Smooth scroll to target
+                targetElement.scrollIntoView({
                     behavior: 'smooth'
                 });
+                
                 if (window.innerWidth <= 768) {
-                    closemenu();
+                    toggleMenu();
                 }
+            });
+        });
+
+        // Project link hover animation
+        document.querySelectorAll('.project-link').forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.2) rotate(15deg)';
+            });
+            link.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1) rotate(0)';
             });
         });
 
@@ -224,7 +256,14 @@
             })
             .then(response => {
                 if (response.ok) {
-                    alert('Thanks for your message!');
+                    // Add success animation
+                    const btn = document.querySelector('.btn2');
+                    btn.innerHTML = '<i class="fas fa-check"></i> Sent!';
+                    btn.style.backgroundColor = '#4CAF50';
+                    setTimeout(() => {
+                        btn.innerHTML = 'Send Message';
+                        btn.style.backgroundColor = '#ff004f';
+                    }, 2000);
                     contactForm.reset();
                 } else {
                     console.error('Server Error:', response);
@@ -236,25 +275,43 @@
                 alert('Error sending message.');
             });
         });
-        
-
 
         // Updated menu toggle function
-function toggleMenu() {
-    const sidemenu = document.getElementById("sidemenu");
-    const menuToggle = document.querySelector(".menu-toggle");
-    sidemenu.classList.toggle("active");
-    menuToggle.classList.toggle("active");
-}
-
-// Close menu when clicking a link
-document.querySelectorAll('#sidemenu a').forEach(link => {
-    link.addEventListener('click', () => {
-        if (window.innerWidth <= 768) {
-            toggleMenu();
+        function toggleMenu() {
+            const sidemenu = document.getElementById("sidemenu");
+            const menuToggle = document.querySelector(".menu-toggle");
+            sidemenu.classList.toggle("active");
+            menuToggle.classList.toggle("active");
+            
+            // Add animation class
+            if (sidemenu.classList.contains("active")) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'auto';
+            }
         }
-    });
-});
+
+        // Close menu when clicking a link
+        document.querySelectorAll('#sidemenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // Add scroll animation
+        window.addEventListener('scroll', function() {
+            const elements = document.querySelectorAll('.work, .about-col-1 img, .contact-form');
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.classList.add('animate');
+                }
+            });
+        });
     </script>
 </body>
 </html>
