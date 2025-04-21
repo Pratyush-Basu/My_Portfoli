@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website - Pratyush Basu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <!-- In the <nav> section -->
+<nav>
+    <img src="Images/logo.png" class="logo">
+    <ul id="sidemenu">
+        <li><a href="#header">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#project">Projects</a></li>
+        <li><a href="resume.pdf" download class="download-btn">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <div class="hamburger"></div>
+    </div>
+</nav>
+            <div class="header-text"> 
+                <p class="typing-text"></p>
+                <h1>Hi, I'm <span>Pratyush Basu</span><br>From West Bengal, India</h1>
+            </div>
+        </div>
+    </div>
+    <!--about-->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <!-- Image Column -->
+                <div class="about-col-1">
+                    <img src="Images/about.jpg" alt="About Image">
+                </div>
+                <!-- About and Skills Column -->
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>
+                        I am a B.Tech student specializing in Computer Science and Engineering, with a solid foundation in programming, frontend development, machine learning, and Generative AI. I am passionate about building impactful projects that address real-world challenges through technology.  
+                        I actively work on basic Generative AI problems and continue to explore its potential in real-life applications.  
+                        Currently, I am seeking opportunities in Machine Learning or Web Development to further sharpen my skills and gain practical experience while contributing to innovative solutions.
+                    </p>
+                    
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                        <p class="tab-links" onclick="opentab('achievements')">Achievements</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Web Development</span><br>HTML, CSS, Bootstrap, JavaScript</li>
+                            <li><span>Programming</span><br>C++, Python, Java</li>
+                            <li><span>AI/ML</span><br>Machine Learning, Deep Learning</li>
+                            <li><span>Tools</span><br> VS Code, Google Colab, Git</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2022-2026 (Pursuing)</span> <br>B.Tech - Computer Science & Engineering from FIEM, West Bengal.</li>
+                            <li><span>2020-2022</span> <br>Higher Secondary from Harinavi D.V.A.S High School.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="achievements">
+                        <ul>
+                            <li><span>2025</span><br>Led a team to secure a Top 8 position in a 36-hour hackathon (FrostHack S01), competing against top innovators</li>
+                            <li><span>2024</span><br>Finalist of Hackspire 2024 - 12-hour Hackathon</li>
+                            <li><span>2024</span><br>Built a Smart Parking Management System Prototype</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Project section-->
+    <div id="project">
+        <div class="container">
+            <h1 class="sub-title">My Work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="Images/project1_new.jpg">
+                    <div class="layer">
+                        <h3>Parking Management System(Group)</h3>
+                        <p>IoT and Computer Vision-Enhanced Smart and Effective Real-Time Management for Street and Private Parking.</p>
+                        <a href="https://github.com/Pratyush-Basu"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="Images/project2_new2.png">
+                    <div class="layer">
+                        <h3>Intera AI</h3>
+                        <p>Intera AI is a smart career platform with AI mock interviews, salary negotiation, resume-based coding tasks, and a voice-assisted career guidance bot.Crack Interviews. Win Salaries. Build Your Future</p>
+                        <a href="https://github.com/Pratyush-Basu"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="Images/project3.jpg">
+                    <div class="layer">
+                        <h3>Mental Health Prediction for Working Professionals</h3>
+                        <p>A machine learning-based system that predicts mental health issues in professionals by analyzing work stress, emotional well-being and many more, helping to improve workplace wellness.</p>
+                        <a href="https://github.com/Pratyush-Basu/Mental-Health-Prediction-for-Working-Professional"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="https://github.com/Pratyush-Basu" class="btn">See More</a>
+        </div>
+    </div>
+    <section id="contact">
+        <div class="contact-container">
+            <h2>Contact Me</h2>
+            <p>I'd love to hear from you! Feel free to reach out using the form below or the provided details.</p>
+            <div class="contact-content">
+                <div class="contact-details">
+                    <h3>Get in Touch</h3>
+                    <p><i class="fas fa-paper-plane"></i> basupratyush76@gmail.com</p>
+                    <!--<p><i class="fas fa-phone"></i> +91 XXXXXXXXXX</p>-->
+                    <p><i class="fas fa-map-marker-alt"></i> 255 K.C. Bose Road, Kolkata-700146</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/pratyush-basu-p19/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/Pratyush-Basu" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=basupratyush76@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" placeholder="Type your message" rows="5" required></textarea>
+                    
+                    <button type="submit" class="btn btn2">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+        // Typing effect for the header text
+        const typingText = document.querySelector('.typing-text');
+        const professions = ["Frontend Developer", "AI/ML Engineer", "Programmer", "Tech Enthusiast"];
+        let professionIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function type() {
+            const currentProfession = professions[professionIndex];
+            
+            if (isDeleting) {
+                typingText.textContent = currentProfession.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingText.textContent = currentProfession.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentProfession.length) {
+                isDeleting = true;
+                setTimeout(type, 1500);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                professionIndex = (professionIndex + 1) % professions.length;
+                setTimeout(type, 500);
+            } else {
+                setTimeout(type, isDeleting ? 50 : 150);
+            }
+        }
+
+        // Start the typing effect
+        type();
+
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                if (window.innerWidth <= 768) {
+                    closemenu();
+                }
+            });
+        });
+
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+        
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            };
+        
+            console.log('Sending data:', formData);  // Debug: log data before sending
+        
+            fetch('https://script.google.com/macros/s/AKfycbxCj1GcFG_f64TH33UNsV7_MHBq9GMyZQxYuvEn211sRJyZEoMnGWb4JU9fyWo8D8ja/exec', {
+                method: 'POST',
+                body: JSON.stringify(formData),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Thanks for your message!');
+                    contactForm.reset();
+                } else {
+                    console.error('Server Error:', response);
+                    alert('Something went wrong. Try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error!', error);
+                alert('Error sending message.');
+            });
+        });
+        
+
+
+        // Updated menu toggle function
+function toggleMenu() {
+    const sidemenu = document.getElementById("sidemenu");
+    const menuToggle = document.querySelector(".menu-toggle");
+    sidemenu.classList.toggle("active");
+    menuToggle.classList.toggle("active");
+}
+
+// Close menu when clicking a link
+document.querySelectorAll('#sidemenu a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+            toggleMenu();
+        }
+    });
+});
+    </script>
+</body>
+</html>
