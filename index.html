@@ -277,28 +277,12 @@
         });
 
         // Updated menu toggle function
-        function toggleMenu() {
-            const sidemenu = document.getElementById("sidemenu");
-            const menuToggle = document.querySelector(".menu-toggle");
-            sidemenu.classList.toggle("active");
-            menuToggle.classList.toggle("active");
-            
-            // Add animation class
-            if (sidemenu.classList.contains("active")) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = 'auto';
-            }
-        }
-
-        // Close menu when clicking a link
-        document.querySelectorAll('#sidemenu a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth <= 768) {
-                    toggleMenu();
-                }
-            });
-        });
+function toggleMenu() {
+    const sidemenu = document.getElementById("sidemenu");
+    const menuToggle = document.querySelector(".menu-toggle");
+    sidemenu.classList.toggle("active");
+    menuToggle.classList.toggle("active");
+}
 
         // Add scroll animation
         window.addEventListener('scroll', function() {
